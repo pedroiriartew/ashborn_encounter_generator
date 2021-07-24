@@ -1,15 +1,16 @@
-package com.encountergenerator.ashborn.controllers;
+package controllers;
 
-import com.encountergenerator.ashborn.model.Creature;
-import com.encountergenerator.ashborn.services.CreatureService;
+import model.Creature;
+import services.CreatureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-//@RequestMapping
+@RequestMapping
 public class CreatureController {
 
     private final CreatureService creatureService;

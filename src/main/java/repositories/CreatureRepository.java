@@ -1,6 +1,6 @@
-package com.encountergenerator.ashborn.repositories;
+package repositories;
 
-import com.encountergenerator.ashborn.model.Creature;
+import model.Creature;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
