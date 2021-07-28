@@ -1,6 +1,6 @@
 package controllers;
 
-import enums.Enviroment;
+import enums.Environment;
 import enums.Size;
 import enums.Type;
 import model.Creature;
@@ -21,10 +21,10 @@ public class CreatureController {
         this.creatureService = creatureService;
     }
 
-    @GetMapping
+    @GetMapping(value = "/index")
     public List<Creature> getCreature()
     {
-        return creatureService.getCreature();
+        return creatureService.getCreatures();
     }
 
     @PostMapping
@@ -42,13 +42,13 @@ public class CreatureController {
     @PutMapping(path = "{creatureId}")
     public void updateCreature(@PathVariable("creatureId") Long id,
                                @RequestParam(required = false) String name,
-                               @RequestParam(required = false)  Long challengeRating,
+                               @RequestParam(required = false)  String challengeRating,
                                @RequestParam(required = false) Integer experience,
                                @RequestParam(required = false)  Size size,
                                @RequestParam(required = false)  Type type,
-                               @RequestParam(required = false)  Enviroment enviroment,
+                               @RequestParam(required = false)  Environment environment,
                                @RequestParam(required = false)  String alignment)
     {
-        creatureService.updateCreature(id, name, challengeRating, experience, size, type, enviroment, alignment);
+        creatureService.updateCreature(id, name, challengeRating, experience, size, type, environment, alignment);
     }
 }

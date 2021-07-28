@@ -1,54 +1,37 @@
 package model;
 
-import enums.Enviroment;
-import enums.Size;
-import enums.Type;
-import repositories.CreatureRepository;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import services.CreatureService;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @Configuration
 public class CreatureConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner(CreatureRepository repository)
+    CommandLineRunner commandLineRunner(CreatureService creatureService)
     {
         return args -> {
-            Creature bicho1 = new Creature(
-                    1L,
-                    "algo",
-                    1L,
-                    200,
-                    Size.TINY,
-                    Type.ABERRATION,
-                    Enviroment.AQUATIC,
-                    "chaotic stupid"
-            );
-            Creature bicho2 = new Creature(
-                    2L,
-                    "algo distinto",
-                    2L,
-                    400,
-                    Size.TINY,
-                    Type.UNDEAD,
-                    Enviroment.GRASSLAND,
-                    "chaotic piola"
-            );
-            repository.saveAll(List.of(bicho1, bicho2));
+            //leo el JSON
+            ObjectMapper mapper = new ObjectMapper();
+            TypeReference<List<Creature>> typeReference = new TypeReference<List<Creature>>(){};
+            InputStream inputStream = TypeReference.class.getResourceAsStream("json/creatures.json");
+
+            try {
+                List<Creature> creatures = mapper.readValue(inputStream, typeReference);
+                creatureService.saveCreatures(creatures);
+                System.out.println("Creatures saved");
+            }
+            catch(IOException e)
+            {
+                System.out.println("Creatures can not be saved: " + e.getMessage());
+            }
         };
     }
 }
-
-//            new Creature(
-//                    1L,
-//                    "algo",
-//                    1L,
-//                    200,
-//                    Size.TINY,
-//                    Type.ABERRATION,
-//                    Enviroment.AQUATIC,
-//                    "chaotic stupid"
-//                    );

@@ -1,6 +1,6 @@
 package services;
 
-import enums.Enviroment;
+import enums.Environment;
 import enums.Size;
 import enums.Type;
 import model.Creature;
@@ -22,9 +22,14 @@ public class CreatureService {
         this.creatureRepository = creatureRepository;
     }
 
-    public List<Creature> getCreature()
+    public List<Creature> getCreatures()
     {
         return creatureRepository.findAll();
+    }
+
+    public List<Creature> saveCreatures(List<Creature> creatures)
+    {
+        return creatureRepository.saveAll(creatures);
     }
 
     public void addNewCreature(Creature creature) {
@@ -41,13 +46,13 @@ public class CreatureService {
     public void deleteCreature(Long id) {
         boolean exists = creatureRepository.existsById(id);
         if (!exists)
-            throw new IllegalStateException("Creture with id: " + id +" does not exists");
+            throw new IllegalStateException("Creature with id: " + id +" does not exists");
         else
             creatureRepository.deleteById(id);
     }
 
     @Transactional
-    public void updateCreature(Long id, String name, Long challengeRating, Integer experience, Size size, Type type, Enviroment enviroment, String alignment) {
+    public void updateCreature(Long id, String name, String challengeRating, Integer experience, Size size, Type type, Environment environment, String alignment) {
         Creature creature = creatureRepository.findById(id).orElseThrow(()-> new IllegalStateException("There is no Creature with "+ id + "as ID"));
 
         creature.setName(name);
@@ -55,7 +60,7 @@ public class CreatureService {
         creature.setExperience(experience);
         creature.setSize(size);
         creature.setType(type);
-        creature.setEnviroment(enviroment);
+        creature.setEnvironment(environment);
         creature.setAlignment(alignment);
 
     }

@@ -1,6 +1,6 @@
 package model;
 
-import enums.Enviroment;
+import enums.Environment;
 import enums.Size;
 import enums.Type;
 import lombok.*;
@@ -22,11 +22,11 @@ public class Creature {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
-    private Long challengeRating;
+    private String challengeRating;
     private Integer experience;
     private Size size;
     private Type type;
-    private Enviroment enviroment;
+    private Environment environment;
     private String alignment;
 
 }

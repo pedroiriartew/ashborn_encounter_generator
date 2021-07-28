@@ -1,0 +1,57 @@
+[{
+        "id": 1,
+        "name": "Goblin",
+        "challengeRating": "1/4",
+        "experience": 50,
+        "size": "SMALL",
+        "type": "HUMANOID",
+        "environment": "DUNGEON",
+        "alignment": "neutral evil"
+    }, {
+        "id": 2,
+        "name": "Beholder",
+        "challengeRating": "13",
+        "experience": 10000,
+        "size": "LARGE",
+        "type": "ABERRATION",
+        "environment": "UNDERGROUND",
+        "alignment": "lawful evil"
+    }, {
+        "id": 3,
+        "name": "Ogre",
+        "challengeRating": "2",
+        "experience": 450,
+        "size": "LARGE",
+        "type": "GIANT",
+        "enviroment": "FOREST",
+        "alignment": "chaotic evil"
+    }, {
+        "id": 4,
+        "name": "Gelatinous Cube",
+        "challengeRating": "2",
+        "experience": 450,
+        "size": "LARGE",
+        "type": "OOZE",
+        "enviroment": "DUNGEON",
+        "alignment": "unaligned"
+    }, {
+        "id": 5,
+        "name": "Wolf",
+        "challengeRating": "1/4",
+        "experience": 50,
+        "size": "MEDIUM",
+        "type": "BEAST",
+        "enviroment": "GRASSLAND",
+        "alignment": "unaligned"
+    }, {
+        "id": 6,
+        "name": "Adult Red Dragon",
+        "challengeRating": "17",
+        "experience": 18000,
+        "size": "HUGE",
+        "type": "DRAGON",
+        "enviroment": "MOUNTAIN",
+        "alignment": "chaotic evil"
+    }
+	
+]

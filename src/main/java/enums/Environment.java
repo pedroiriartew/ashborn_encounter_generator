@@ -1,6 +1,6 @@
 package enums;
 
-public enum Enviroment {
+public enum Environment {
     AQUATIC,
     ARCTIC,
     CAVE,
