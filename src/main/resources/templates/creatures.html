@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr th:if="${creatures.empty}">
+        <td colspan="2"> No creatures available </td>
+    </tr>
+    <tr th:each="creature : ${creatures}">
+        <td><span th:text="${creature.name}"> Nombre </span></td>
+        <td><span th:text="${creature.type}"> Tipo </span></td>
+        <td><span th:text="${creature.challengeRating}"> CR </span></td>
+        <td><span th:text="${creature.experience}"> Experiencia </span></td>
+        <td><span th:text="${creature.environment}"> Ambiente </span></td>
+        <td><span th:text="${creature.size}"> Tamaño </span></td>
+        <td><span th:text="${creature.alignment}"> Alineamiento </span></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

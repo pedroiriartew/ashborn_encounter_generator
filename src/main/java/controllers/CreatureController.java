@@ -4,6 +4,7 @@ import enums.Environment;
 import enums.Size;
 import enums.Type;
 import model.Creature;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import services.CreatureService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class CreatureController {
     public List<Creature> getCreature()
     {
         return creatureService.getCreatures();
+    }
+
+    @GetMapping("/creatures")
+    public String showAllCreatures(Model model) {
+        model.addAttribute("creatures", creatureService.getCreatures());
+        return "creatures/allCreatures";
     }
 
     @PostMapping

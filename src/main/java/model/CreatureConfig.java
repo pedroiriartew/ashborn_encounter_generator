@@ -21,7 +21,7 @@ public class CreatureConfig {
             //leo el JSON
             ObjectMapper mapper = new ObjectMapper();
             TypeReference<List<Creature>> typeReference = new TypeReference<List<Creature>>(){};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("json/creatures.json");
+            InputStream inputStream = TypeReference.class.getResourceAsStream("resources/json/creatures.json");
 
             try {
                 List<Creature> creatures = mapper.readValue(inputStream, typeReference);
