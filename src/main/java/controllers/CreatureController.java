@@ -4,15 +4,15 @@ import enums.Environment;
 import enums.Size;
 import enums.Type;
 import model.Creature;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import services.CreatureService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
 
-@RestController
-@RequestMapping
+@Controller
+@RequestMapping("/creatures")
 public class CreatureController {
 
     private final CreatureService creatureService;
@@ -22,16 +22,16 @@ public class CreatureController {
         this.creatureService = creatureService;
     }
 
-    @GetMapping(value = "/index")
-    public List<Creature> getCreature()
+    @GetMapping
+    public String getCreature()
     {
-        return creatureService.getCreatures();
+        return "index";
     }
 
-    @GetMapping("/creatures")
+    @GetMapping("/all")
     public String showAllCreatures(Model model) {
         model.addAttribute("creatures", creatureService.getCreatures());
-        return "creatures/allCreatures";
+        return "creatures";
     }
 
     @PostMapping
@@ -40,13 +40,13 @@ public class CreatureController {
         creatureService.addNewCreature(creature);
     }
 
-    @DeleteMapping(path = "{creatureId}")
+    @PostMapping(path = "/{creatureId}/delete")
     public void deleteCreature(@PathVariable("creatureId") Long id)
     {
         creatureService.deleteCreature(id);
     }
 
-    @PutMapping(path = "{creatureId}")
+    @PostMapping(path = "/{creatureId}/update")
     public void updateCreature(@PathVariable("creatureId") Long id,
                                @RequestParam(required = false) String name,
                                @RequestParam(required = false)  String challengeRating,
