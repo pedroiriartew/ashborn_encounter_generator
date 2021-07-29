@@ -11,27 +11,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-@Configuration
+//@Configuration
 public class CreatureConfig {
 
-    @Bean
-    CommandLineRunner commandLineRunner(CreatureService creatureService)
-    {
-        return args -> {
-            //leo el JSON
-            ObjectMapper mapper = new ObjectMapper();
-            TypeReference<List<Creature>> typeReference = new TypeReference<List<Creature>>(){};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/creatures.json");
-
-            try {
-                List<Creature> creatures = mapper.readValue(inputStream, typeReference);
-                creatureService.saveCreatures(creatures);
-                System.out.println("Creatures saved");
-            }
-            catch(IOException e)
-            {
-                System.out.println("Creatures can not be saved: " + e.getMessage());
-            }
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(CreatureService creatureService)
+//    {
+//        return args -> {
+//            //leo el JSON
+//            ObjectMapper mapper = new ObjectMapper();
+//            TypeReference<List<Creature>> typeReference = new TypeReference<List<Creature>>(){};
+//            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/creatures.json");
+//
+//            try {
+//                List<Creature> creatures = mapper.readValue(inputStream, typeReference);
+//                creatureService.saveCreatures(creatures);
+//                System.out.println("Creatures saved");
+//            }
+//            catch(IOException e)
+//            {
+//                System.out.println("Creatures can not be saved: " + e.getMessage());
+//            }
+//        };
+//    }
 }
