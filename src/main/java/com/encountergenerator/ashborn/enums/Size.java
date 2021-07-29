@@ -1,4 +1,4 @@
-package enums;
+package com.encountergenerator.ashborn.enums;
 
 public enum Size {
     TINY,

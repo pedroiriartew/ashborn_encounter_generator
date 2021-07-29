@@ -1,8 +1,8 @@
-package model;
+package com.encountergenerator.ashborn.model;
 
-import enums.Environment;
-import enums.Size;
-import enums.Type;
+import com.encountergenerator.ashborn.enums.Environment;
+import com.encountergenerator.ashborn.enums.Size;
+import com.encountergenerator.ashborn.enums.Type;
 import lombok.*;
 
 import javax.persistence.Entity;

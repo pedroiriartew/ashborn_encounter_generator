@@ -1,13 +1,13 @@
-package controllers;
+package com.encountergenerator.ashborn.controllers;
 
-import enums.Environment;
-import enums.Size;
-import enums.Type;
-import model.Creature;
+import com.encountergenerator.ashborn.enums.Environment;
+import com.encountergenerator.ashborn.enums.Size;
+import com.encountergenerator.ashborn.enums.Type;
+import com.encountergenerator.ashborn.model.Creature;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import services.CreatureService;
+import com.encountergenerator.ashborn.services.CreatureService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 

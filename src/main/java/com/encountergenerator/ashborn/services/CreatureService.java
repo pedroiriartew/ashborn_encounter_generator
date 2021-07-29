@@ -1,10 +1,10 @@
-package services;
+package com.encountergenerator.ashborn.services;
 
-import enums.Environment;
-import enums.Size;
-import enums.Type;
-import model.Creature;
-import repositories.CreatureRepository;
+import com.encountergenerator.ashborn.enums.Environment;
+import com.encountergenerator.ashborn.enums.Size;
+import com.encountergenerator.ashborn.enums.Type;
+import com.encountergenerator.ashborn.model.Creature;
+import com.encountergenerator.ashborn.repositories.CreatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

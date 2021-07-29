@@ -23,7 +23,7 @@
         "experience": 450,
         "size": "LARGE",
         "type": "GIANT",
-        "enviroment": "FOREST",
+        "environment": "FOREST",
         "alignment": "chaotic evil"
     }, {
         "id": 4,
@@ -32,7 +32,7 @@
         "experience": 450,
         "size": "LARGE",
         "type": "OOZE",
-        "enviroment": "DUNGEON",
+        "environment": "DUNGEON",
         "alignment": "unaligned"
     }, {
         "id": 5,
@@ -41,7 +41,7 @@
         "experience": 50,
         "size": "MEDIUM",
         "type": "BEAST",
-        "enviroment": "GRASSLAND",
+        "environment": "GRASSLAND",
         "alignment": "unaligned"
     }, {
         "id": 6,
@@ -50,7 +50,7 @@
         "experience": 18000,
         "size": "HUGE",
         "type": "DRAGON",
-        "enviroment": "MOUNTAIN",
+        "environment": "MOUNTAIN",
         "alignment": "chaotic evil"
     }
 	
