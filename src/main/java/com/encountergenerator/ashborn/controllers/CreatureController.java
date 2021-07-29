@@ -34,10 +34,19 @@ public class CreatureController {
         return "creatures";
     }
 
-    @PostMapping
-    public void addNewCreature(@RequestBody Creature creature)
+    @GetMapping("/create")
+    public String createCreature(Model model)
+    {
+        model.addAttribute("newCreature", new Creature());
+        return "creatures/create";
+    }
+
+    @PostMapping("/create")
+    public String addNewCreature(@ModelAttribute("newCreature") Creature creature, Model model)
     {
         creatureService.addNewCreature(creature);
+
+        return "redirect:/creatures/all";
     }
 
     @PostMapping(path = "/{creatureId}/delete")
