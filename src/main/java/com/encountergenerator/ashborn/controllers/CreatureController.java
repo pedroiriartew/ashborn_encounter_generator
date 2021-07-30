@@ -46,7 +46,7 @@ public class CreatureController {
     {
         creatureService.addNewCreature(creature);
 
-        return "redirect:all";
+        return "redirect:/all";
     }
 
     @PostMapping(path = "/{creatureId}/delete")
