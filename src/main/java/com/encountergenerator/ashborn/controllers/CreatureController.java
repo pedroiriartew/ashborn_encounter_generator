@@ -38,7 +38,7 @@ public class CreatureController {
     public String createCreature(Model model)
     {
         model.addAttribute("newCreature", new Creature());
-        return "creatures/create";
+        return "/create";
     }
 
     @PostMapping("/create")
@@ -46,7 +46,7 @@ public class CreatureController {
     {
         creatureService.addNewCreature(creature);
 
-        return "redirect:/creatures/all";
+        return "redirect:/all";
     }
 
     @PostMapping(path = "/{creatureId}/delete")

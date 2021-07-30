@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <h1>Create creature</h1>
+    <form th:object="${newCreature}"
+          th:action="@{/creatures/create}"
+          method="post">
+        <div>
+            <label for="givenName">Given name</label>
+            <input id="givenName" type="text"
+                   th:field="*{givenName}">
+        </div>
+        <div>
+            <label for="familyName">Family name</label>
+            <input id="familyName" type="text"
+                   th:field="*{familyName}">
+        </div>
+        <button type="submit">Create creature</button>
+    </form>
+</main>
+</body>
+</html>
