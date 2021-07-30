@@ -2,9 +2,52 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create new creature</title>
 </head>
 <body>
-
+<main>
+    <h1>Create new creature</h1>
+    <form th:object="${newCreature}"
+          th:action="@{creatures/create}"
+          method="post">
+        <div>
+            <label for="name">Nombre</label>
+            <input id="name" type="text" name="name" th:field="*{name}">
+        </div>
+        <div>
+            <label for="challengeRating">Challenge Rating (CR)</label>
+            <input id="challengeRating" type="text" name="challengeRating" th:field="*{challengeRating}">
+        </div>
+        <div>
+            <label for="experience">Experiencia otorgada</label>
+            <input id="experience" type="text"
+                   th:field="*{experience}">
+        </div>
+        <div>
+            <select name="size">
+                <option th:each="sizeOpt : ${T(com.encountergenerator.ashborn.enums.Size).values()}"
+                        th:value="${sizeOpt}" th:text="${sizeOpt}"></option>
+            </select>
+        </div>
+        <div>
+            <select name="type">
+                <option th:each="typeOpt : ${T(com.encountergenerator.ashborn.enums.Type).values()}"
+                        th:value="${typeOpt}" th:text="${typeOpt}"></option>
+            </select>
+        </div>
+        <div>
+            <select name="environment">
+                <option th:each="environmentOpt : ${T(com.encountergenerator.ashborn.enums.Environment).values()}"
+                        th:value="${environmentOpt}" th:text="${environmentOpt}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="alignment">Alineamiento</label>
+            <input id="alignment" type="text"
+                   th:field="*{alignment}">
+        </div>
+        <button type="submit">Create creature</button>
+    </form>
+</main>
 </body>
 </html>
