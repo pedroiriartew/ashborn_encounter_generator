@@ -44,8 +44,8 @@ public class CreatureController {
     @PostMapping("/create")
     public String addNewCreature(@ModelAttribute("newCreature") Creature creature, Model model)
     {
+        creature.setId(1L);
         creatureService.addNewCreature(creature);
-
         return "redirect:/all";
     }
 
